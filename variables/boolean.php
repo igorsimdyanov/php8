@@ -1,0 +1,2 @@
+<?php
+$bool = true;
