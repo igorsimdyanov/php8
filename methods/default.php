@@ -1,8 +1,13 @@
 <?php
-class Point
-{
+class Point {
     private $x;
     private $y;
+
+    public function __construct(int $x = 0, int $y = 0)
+    {
+        $this->x = $x;
+        $this->y = $y;
+    }
 
     public function setX(int $x) : void
     {
