@@ -9,6 +9,16 @@ class Point {
         $this->y = $y;
     }
 
+    public function __get($key)
+    {
+        if($key == 'distance') {
+            return sqrt($this->getX() ** 2 + $this->getY() ** 2);
+        } else {
+            return null;
+        }
+
+    }
+
     public function getX() : int
     {
         return $this->x;
@@ -16,9 +26,5 @@ class Point {
     public function getY() : int
     {
         return $this->y;
-    }
-    public function distance() : float
-    {
-        return sqrt($this->getX() ** 2 + $this->getY() ** 2);
     }
 }
