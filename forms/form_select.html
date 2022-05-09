@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>HTML-форма со списком</title>
+  <meta charset='utf-8' />
+</head>
+<body>
+  <form method='post' action='form_hidden_handler.php'>
+    Выбор нескольких значений<br />
+    <select name='fst[]' multiple size='3'>
+      <option value='1' selected>Первый пункт</option>
+      <option value='2'>Второй пункт</option>
+      <option value='3' selected>Третий пункт</option>
+    </select><br />
+    Одно значение<br />
+    <select name='snd'>
+      <option value='1'>Первый пункт</option>
+      <option value='2'>Второй пункт</option>
+      <option value='3'>Третий пункт</option>
+    </select><br />
+    <input type='submit' value='Отправить' />
+  </form>
+</body>
+</html>
