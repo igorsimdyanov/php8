@@ -2,11 +2,11 @@
 function generator()
 {
     yield 1;
-    return yield from two_three();
+    return yield from twoThree();
     yield 5;
 }
 
-function two_three()
+function twoThree()
 {
     yield 2;
     yield 3;
