@@ -6,9 +6,9 @@
 </head>
 <body>
   <?php
-    if (@$_REQUEST['doUpload']) {
-        echo '<pre>Содержимое $_FILES: '.print_r($_FILES, true).'</pre><hr />';
-    }
+  if (!empty($_POST['doUpload'])) {
+      echo '<pre>Содержимое $_FILES: '.print_r($_FILES, true).'</pre><hr />';
+  }
   ?>
   <form action="complex.php" method="POST" enctype="multipart/form-data">
   <h3>Выберите тип файлов в вашей системе:</h3>
