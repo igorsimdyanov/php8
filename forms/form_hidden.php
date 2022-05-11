@@ -8,7 +8,7 @@
   <form method='post' action='form_hidden_handler.php'>
     <textarea name='name' cols='50' rows='10'></textarea><br />
     <input type='submit' value='Отправить' />
-    <input name='id' type='hidden' value="<?= intval($_GET['id'] ?? ''); ?>" />
+    <input name='id' type='hidden' value="<?= intval($_GET['id'] ?? 0); ?>" />
   </form>
 </body>
 </html>
