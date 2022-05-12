@@ -24,7 +24,6 @@ $definition = [
     'id' => FILTER_VALIDATE_INT
 ];
 
-// Осуществляем проверку
 $result = filter_var_array($data, $definition);
 echo '<pre>';
 print_r($result);
