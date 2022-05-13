@@ -8,6 +8,6 @@ function simple($from = 0, $to = 100)
 }
 
 foreach(simple() as $val) {
-  echo 'квадрат = ' . ($val * $val) . '<br />';
+    echo 'квадрат = ' . ($val * $val) . '<br />';
     if ($val >= 5) break;
 }
