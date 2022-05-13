@@ -2,21 +2,22 @@
 // Функция выводит имена всех подкаталогов в текущем каталоге,
 // выполняя рекурсивный обход. Параметр $level задает текущую
 // глубину рекурсии.
-function printTree($level = 1) {
+function printTree($level = 1)
+{
     // Открываем каталог и выходим в случае ошибки
-    $d = opendir('.');
-    if (!$d) return;
-    while (($e = readdir($d)) !== false) {
+    $dir = opendir('.');
+    if (!$dir) return;
+    while (($file = readdir($dir)) !== false) {
         // Игнорируем элементы .. и .
-        if ($e == '.' || $e == '..') continue;
+        if ($file == '.' || $file == '..') continue;
         // Нам нужны только подкаталоги
-        if (!@is_dir($e)) continue;
+        if (!is_dir($file)) continue;
         // Печатаем пробелы, чтобы сместить вывод
         for ($i = 0; $i < $level; $i++) echo '  ';
         // Выводим текущий элемент
-        echo $e . PHP_EOL;
+        echo $file . PHP_EOL;
         // Входим в текущий подкаталог и печатаем его
-        if (!chdir($e)) continue;
+        if (!chdir($file)) continue;
         printTree($level + 1);
         // Возвращаемся назад
         chdir('..');
@@ -24,7 +25,7 @@ function printTree($level = 1) {
         // для больших распечаток
         flush();
     }
-    closedir($d);
+    closedir($dir);
 }
 
 // Выводим остальной текст фиксированным шрифтом
