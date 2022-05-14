@@ -1,3 +1,3 @@
-<?php // Проверочный скрипт Hello, world!
+<?php
     echo "Hello, world!";
 ?>
