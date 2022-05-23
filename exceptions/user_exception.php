@@ -19,5 +19,8 @@ class User
         if (isset($this->$index)) {
             $this->$index = $value;
         }
+        else {
+            throw new Exception("Атрибут $index не существует");
+        }
     }
 }
