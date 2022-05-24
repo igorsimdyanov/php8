@@ -13,7 +13,7 @@ try {
     }
     catch(Exception $exp)
     {
-        echo 'Exception-исключение ' . get_class($exp) . '<br />';
+        echo 'Exception-исключение ' . $exp::class . '<br />';
         // Передача исключения далее по каскаду
         throw $exp;
     }
