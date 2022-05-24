@@ -23,6 +23,7 @@ class User
             throw new AttributeException($index);
         }
     }
+
     public function __set(string $index, string $value) : void
     {
       if (isset($this->$index)) {
@@ -32,6 +33,7 @@ class User
           throw new AttributeException($index);
       }
     }
+
     public function isPasswordCorrect($password)
     {
         return $this->password == $password;
