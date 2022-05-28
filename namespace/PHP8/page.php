@@ -1,18 +1,14 @@
 <?php
 namespace PHP8;
 use \PHP8\Seo as Seo;
-use \PHP8\Tag as Tag;
+use \PHP8\Author as Author;
 
 class Page
 {
-    use Seo, Tag;
+    use Seo, Author;
 
-    protected $title;
-    protected $content;
-
-    public function __construct(string $title = '', string $content = '')
-    {
-        $this->title = $title;
-        $this->content = $content;
-    }
+    public function __construct(
+        protected string $title = '',
+        protected string $content = ''
+    ) {}
 }

@@ -3,10 +3,6 @@ namespace PHP8;
 
 trait Seo
 {
-    private $keyword;
-    private $description;
-    private $ogs;
-
     public function keywords()
     {
         // $query = 'SELECT keywords FROM seo WHERE id = :id LIMIT 1'
