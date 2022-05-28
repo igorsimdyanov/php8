@@ -1,5 +1,5 @@
 <?php
-namespace MVC\models;
+namespace MVC\Models;
 
 class Users
 {
