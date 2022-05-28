@@ -1,11 +1,11 @@
 <?php
 namespace PHP8;
 
-trait Tag
+trait Author
 {
-    public function tags()
+    public function authors()
     {
         // $query = 'SELECT * FROM authors WHERE id IN(:ids)'
-        echo 'Tag::tags<br />';
+        echo 'Author::authors()<br />';
     }
 }
