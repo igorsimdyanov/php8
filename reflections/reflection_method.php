@@ -1,18 +1,38 @@
 <?php
-class ReflectionFunction extends ReflectionFunctionAbstract {
+class ReflectionMethod extends ReflectionFunctionAbstract {
     /* Константы */
-    const int IS_DEPRECATED = 262144;
+    const int IS_STATIC = 16;
+    const int IS_PUBLIC = 1;
+    const int IS_PROTECTED = 2;
+    const int IS_PRIVATE = 4;
+    const int IS_ABSTRACT = 64;
+    const int IS_FINAL = 32;
+
+    /* Свойства */
+    public string $class;
 
     /* Наследуемые свойства */
     public string $name;
 
     /* Методы */
-    public __construct(Closure|string $function)
-    public static export(string $name, string $return = ?): string
-    public getClosure(): Closure
-    public invoke(mixed ...$args): mixed
-    public invokeArgs(array $args): mixed
-    public isDisabled(): bool
+    public __construct(object|string $objectOrMethod, string $method)
+    public __construct(string $classMethod)
+    public static export(string $class, string $name, bool $return = false): string
+    public getClosure(?object $object = null): Closure
+    public getDeclaringClass(): ReflectionClass
+    public getModifiers(): int
+    public getPrototype(): ReflectionMethod
+    public invoke(?object $object, mixed ...$args): mixed
+    public invokeArgs(?object $object, array $args): mixed
+    public isAbstract(): bool
+    public isConstructor(): bool
+    public isDestructor(): bool
+    public isFinal(): bool
+    public isPrivate(): bool
+    public isProtected(): bool
+    public isPublic(): bool
+    public isStatic(): bool
+    public setAccessible(bool $accessible): void
     public __toString(): string
 
     /* Наследуемые методы */

@@ -2,6 +2,7 @@
 class ReflectionParameter implements Reflector {
     /* Свойства */
     public string $name;
+
     /* Методы */
     public __construct(string|array|object $function, int|string $param)
     public allowsNull(): bool
