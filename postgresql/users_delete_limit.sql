@@ -1,1 +1,0 @@
-DELETE FROM users LIMIT 1;
