@@ -1,7 +1,7 @@
 <?php
 // Выбираем случайное изображение любого формата
 $fnames = glob('*.{gif,jpg,png}', GLOB_BRACE);
-$fname = $fnames[mt_rand(0, count($fnames)-1)];
+$fname = $fnames[rand(0, count($fnames)-1)];
 
 // Определяем формат
 $size = getimagesize($fname);
