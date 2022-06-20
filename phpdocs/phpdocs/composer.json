@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpdocumentor/phpdocumentor": "3.*",
+        "phpdocumentor/reflection": "^5.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    }
+}
