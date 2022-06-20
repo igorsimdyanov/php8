@@ -1,2 +1,8 @@
+.phpdoc
+.phive
+phpdocs/tools
+phpdocs/docs
+.DS_Store
+
 vendor
 *.log
