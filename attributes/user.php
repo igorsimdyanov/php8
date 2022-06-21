@@ -1,0 +1,5 @@
+<?php
+#[model]
+class User
+{
+}
