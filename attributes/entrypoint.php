@@ -1,21 +1,17 @@
 <?php
-#[model]
-class User
-{
-    public function __construct(
-      private ?string $first_name,
-      private ?string $last_name
-    ) {}
+spl_autoload_register();
 
-    #[entrypoint]
-    function first_name() : string
-    {
-        return $this->first_name;
-    }
+$reflect = new ReflectionClass(Entrypoint\User::class);
 
-    #[entrypoint]
-    function last_name() : string
-    {
-        return $this->last_name;
+echo '<pre>';
+foreach ($reflect->getMethods() as $method) {
+    $attrs = array_map(
+                 fn($element) => $element->getName(),
+                 $method->getAttributes()
+             );
+    if (count($attrs) > 0) {
+        echo '<b>'. $method->getName() . '</b>' . PHP_EOL;
+        echo implode(PHP_EOL, $attrs) . PHP_EOL;
     }
 }
+echo '</pre>';
