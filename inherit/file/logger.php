@@ -20,7 +20,7 @@ class FileLogger
 
     public function log($str)
     {
-        $prefix = '[' . date('Y-m-d_h:i:s ') . "{$this->name}] ";
+        $prefix = '[' . date('Y-m-d h:i:s ') . "{$this->name}] ";
         $str = preg_replace('/^/m', $prefix, rtrim($str));
         $this->lines[] = $str . PHP_EOL;
     }

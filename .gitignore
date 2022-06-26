@@ -3,6 +3,7 @@
 phpdocs/tools
 phpdocs/docs
 .DS_Store
+inherit/test.log
 
 vendor
 *.log
