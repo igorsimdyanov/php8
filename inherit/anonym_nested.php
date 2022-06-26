@@ -23,4 +23,4 @@ class Container
     }
 }
 
-(new Container)->anonym()->print();
+(new Container)->anonym()->print(); // Класс Container (1)

@@ -1,17 +1,11 @@
 <?php
 class Page
 {
-    // Любая страница имеет заголовок
-    protected $title;
-    // И содержимое
-    protected $content;
-
     // Конструктор класса
-    public function __construct($title = '', $content = '')
-    {
-        $this->title = $title;
-        $this->content = $content;
-    }
+    public function __construct(
+        protected string $title = '',
+        protected string $content = ''
+    ) {}
 
     // Получение заголовка страницы
     public function title()
