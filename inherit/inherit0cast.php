@@ -8,7 +8,8 @@ $logger = new FileLoggerDebug0('test', 'test.log');
 croak($logger, 'Hasta la vista.');
 
 // Функция принимает параметр типа FileLogger
-function croak(FileLogger $l, $msg) {
+function croak(FileLogger $l, $msg)
+{
     $l->log($msg);
     exit();
 }

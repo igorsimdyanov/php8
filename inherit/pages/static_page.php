@@ -4,7 +4,7 @@ require_once 'cached.php';
 class StaticPage extends Cached
 {
     // Конструктор класса
-    public function __construct($id)
+    public function __construct(protected ?int $id)
     {
         // Проверяем, нет ли такой страницы в кэше
         if ($this->isCached($this->id($id))) {
@@ -23,8 +23,8 @@ class StaticPage extends Cached
     }
 
     // Уникальный ключ для кэша
-    public function id($name)
+    public function id(mixed $name) : string
     {
-      return "static_page_{$id}";
+      return "static_page_{$name}";
     }
 }

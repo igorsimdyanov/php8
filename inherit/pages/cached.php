@@ -9,15 +9,17 @@ class Cached extends Page
     protected $store;
 
     // Конструктор класса
-    public function __construct($title = '', $content = '', $expires = 0)
+    public function __construct($title = '', $content = '', $expires = 60)
     {
         // Вызываем конструктор базового класса Page
         parent::__construct($title, $content);
         // Устанавливаем время жизни кэша
         $this->expires = $expires;
         // Подготовка хранилища
-        // $this->store = new Memcached();
-        // $this->store->addServer('localhost', 11211);
+        // $this->store = new Redis(
+        //                      'host' => '127.0.0.1',
+        //                      'port' => 6379,
+        //                      'connectTimeout' => $this->expires);
         // Размещение данных в хранилище
         $this->set($this->id('title'), $title);
         $this->set($this->id('content'), $content);
@@ -49,7 +51,7 @@ class Cached extends Page
     }
 
     // Формируем уникальный ключ для хранилища
-    public function id($name)
+    public function id(mixed $name) : string
     {
         die('Что здесь делать? Неизвестно!');
     }

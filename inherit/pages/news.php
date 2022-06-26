@@ -23,7 +23,7 @@ class StaticPage extends Cached
     }
 
     // Уникальный ключ для кэша
-    public function id($name)
+    public function id(mixed $name) : string
     {
         return "news_{$name}";
     }
