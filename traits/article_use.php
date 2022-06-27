@@ -3,8 +3,8 @@ require_once 'article.php';
 
 $obj = new Article(
     'Заголовок',
-    'Содержиомое');
+    'Содержимое');
 
-$obj->setAuthor(['Максим Кузнецов', 'Игорь Симдянов']);
+$obj->setAuthor(['Дмитрий Котеров', 'Игорь Симдянов']);
 $obj->seo('SEO-заголовок');
 echo $obj->title(); // SEO-заголовок

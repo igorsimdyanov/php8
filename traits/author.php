@@ -1,13 +1,13 @@
 <?php
 trait Author
 {
-    public $authors;
+    public array $authors;
 
-    public function getAuthor()
+    public function getAuthor() : array
     {
         return $this->authors;
     }
-    public function setAuthor($authors)
+    public function setAuthor(array $authors) : void
     {
         $this->authors = $authors;
     }

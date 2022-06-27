@@ -1,11 +1,11 @@
 <?php
 trait Theme
 {
-    public function tags()
+    public function tags() : void
     {
         echo 'Theme::tags<br />';
     }
-    public function themes()
+    public function themes() : void
     {
         echo 'Theme::themes<br />';
     }
