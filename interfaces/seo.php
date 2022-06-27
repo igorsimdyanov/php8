@@ -1,8 +1,8 @@
 <?php
 interface Seo
 {
-    public function seo($title, $description, $keywords);
-    public function title();
-    public function description();
-    public function keywords();
+    public function seo(?string $title, ?string $description, ?array $keywords);
+    public function title() : ?string;
+    public function description() : ?string;
+    public function keywords() : ?array;
 }
