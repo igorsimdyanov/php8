@@ -1,26 +1,16 @@
 <?php
 class User
 {
-    public $first_name;
-    public $last_name;
-    public $email;
-    private $password;
-
     public function __construct(
-        $email,
-        $password,
-        $first_name = null,
-        $last_name = null)
-    {
-        $this->first_name = $first_name;
-        $this->last_name  = $last_name;
-        $this->email      = $email;
-        $this->password   = $password;
-    }
+        public string $email,
+        private string $password,
+        public ?string $first_name = null,
+        public ?string $last_name = null)
+    {}
 
-    public function fullName() {
+    public function fullName() : string {
         $arr_name = array_filter([$this->first_name, $this->last_name]);
         $full_name = implode(' ', $arr_name);
-        return $full_name ? $full_name : 'Анонимный пользователь';
+        return empty($full_name) ? 'Анонимный пользователь' : $full_name;
     }
 }

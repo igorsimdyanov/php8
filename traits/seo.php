@@ -1,20 +1,20 @@
 <?php
 trait Seo
 {
-    private $seo_title;
-    private $seo_description;
-    private $seo_keywords;
+    private ?string $seo_title;
+    private ?string $seo_description;
+    private ?string $seo_keywords;
 
     public function seo(
-        $title = null,
-        $description = null,
-        $keywords = null)
+        ?string $title = null,
+        ?string $description = null,
+        ?string $keywords = null) : void
     {
         $this->seo_title = $title;
         $this->seo_description = $description;
         $this->seo_keywords = $keywords;
     }
-    public function title()
+    public function title() : ?string
     {
         if(!empty($this->seo_title)) {
             return $this->seo_title;
@@ -22,11 +22,11 @@ trait Seo
             return $this->title;
         }
     }
-    public function description()
+    public function description() : ?string
     {
         return $this->seo_description;
     }
-    public function keywords()
+    public function keywords() : ?string
     {
         return $this->seo_keywords;
     }

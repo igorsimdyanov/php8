@@ -8,7 +8,7 @@ class Moderator extends BackendUser
     use Image;
     use Name;
 
-    public function fullName()
+    public function fullName() : string
     {
         return parent::fullName() . '*';
     }

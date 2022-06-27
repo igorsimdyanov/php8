@@ -6,10 +6,10 @@ class Page
 {
     use Theme, Tag
     {
-      Tag::tags insteadof Theme;
-      Theme::themes insteadof Tag;
-      Theme::tags as themeTags;
-      Tag::themes as tagThemes;
+        Tag::tags insteadof Theme;
+        Theme::themes insteadof Tag;
+        Theme::tags as themeTags;
+        Tag::themes as tagThemes;
     }
 }
 

@@ -1,7 +1,7 @@
 <?php
 trait Name
 {
-    public function fullName()
+    public function fullName() : string
     {
         return parent::fullName() . ' (модератор)';
     }
