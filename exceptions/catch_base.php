@@ -12,12 +12,14 @@ try {
 }
 catch(AttribueException $exp)
 {
+    echo 'Пользовательские исключения<br />';
     echo "Исключение: {$exp->getMessage()}<br />";
     echo "в файле {$exp->getFile()}<br />";
     echo "в строке {$exp->getLine()}<br />";
 }
 catch(Exception $exp)
 {
+    echo 'Прочие исключения<br />';
     echo "Исключение: {$exp->getMessage()}<br />";
     echo "в файле {$exp->getFile()}<br />";
     echo "в строке {$exp->getLine()}<br />";
