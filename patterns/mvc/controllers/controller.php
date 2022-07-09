@@ -3,11 +3,11 @@ namespace MVC\Controllers;
 
 class Controller
 {
-    public $path;
-    public $router;
-    public $model;
+    public string $path;
+    public Router $router;
+    public object $model;
 
-    public function __construct($path)
+    public function __construct(string $path)
     {
         $this->path = $path;
         $this->router = Router::parse($path);
@@ -23,13 +23,13 @@ class Controller
         $class = get_class($this->model);
         $class = substr($class, strrpos($class, '\\') + 1);
         $decorator = \MVC\Decorators\DecoratorFactory::create(
-            $this->router->ext,
             $class,
             $this->model);
         $view = \MVC\Views\ViewFactory::create(
             $this->router->ext,
             $class,
             $decorator);
+
         return $view->render();
     }
 }

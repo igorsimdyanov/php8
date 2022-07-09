@@ -9,11 +9,8 @@ abstract class Router
         $class = 'Factory\\Models\\' . ucfirst($arr[0]);
         $id = count($arr) > 1 ? $arr[1] : null;
         $obj = new $class();
-        if(is_null($id)) {
-            return $obj;
-        } else {
-            return $obj->collection[$id];
-        }
+
+        return is_null($id) ? $obj : $obj->collection[$id];
     }
 
     abstract public function render();
