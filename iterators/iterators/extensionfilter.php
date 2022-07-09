@@ -4,11 +4,11 @@ namespace Iterators;
 class ExtensionFilter extends \FilterIterator
 {
     // Фильтруемое расширение
-    private $ext;
+    private string $ext;
     // Итератор DirectoryIterator
-    private $it;
+    private \DirectoryIterator $it;
 
-    public function __construct(\DirectoryIterator $it, $ext)
+    public function __construct(\DirectoryIterator $it, string $ext)
     {
         parent::__construct($it);
         $this->it = $it;
@@ -21,7 +21,7 @@ class ExtensionFilter extends \FilterIterator
     {
         if (!$this->it->isDir()) {
              $ext = pathinfo($this->current(), PATHINFO_EXTENSION);
-             return $ext != $this->ext;
+             return $ext == $this->ext;
         }
         return true;
     }

@@ -3,8 +3,8 @@ namespace Iterators;
 
 class MyIterator implements \Iterator
 {
-    private $index;
-    private $collection;
+    private mixed $index;
+    private array $collection;
 
     public function __construct(array $collection)
     {
