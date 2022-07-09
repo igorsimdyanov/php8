@@ -5,7 +5,7 @@ class UsersDecorator extends DecoratorFactory
 {
     public $users;
 
-    public function __construct($users)
+    public function __construct(\MVC\Models\Users $users)
     {
         $this->users = $users;
     }
@@ -15,7 +15,9 @@ class UsersDecorator extends DecoratorFactory
        return 'Пользователи';
     }
 
-    public function collection_render(callable $call, string $separator = '<br />')
+    public function collection_render(
+        callable $call,
+        string $separator = '<br />') : string
     {
         return implode(
                    $separator,
