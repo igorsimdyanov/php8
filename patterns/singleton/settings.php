@@ -3,8 +3,8 @@ namespace Singleton;
 
 final class Settings
 {
-    private static $_object = null;
-    private $_settings;
+    private static ?Settings $_object;
+    private ?array $_settings;
 
     private function __construct()
     {
@@ -13,16 +13,13 @@ final class Settings
 
     private function __clone() {}
 
-    public static function get()
+    public static function get() : Settings
     {
-        if (is_null(self::$_object)) {
-            self::$_object = new self();
-        }
-
+        self::$_object ??= new self();
         return self::$_object;
     }
 
-    public function __get($key)
+    public function __get($key) : mixed
     {
         if(array_key_exists($key, $this->_settings)) {
             return $this->_settings[$key];
@@ -31,7 +28,7 @@ final class Settings
         }
     }
 
-    public function __set($key, $value)
+    public function __set($key, $value) : void
     {
         $this->_settings[$key] = $value;
     }
