@@ -7,7 +7,8 @@ function imageTtfBBoxFixed(
   float $angle,
   string $fontfile,
   string $text
-) : array {
+) : array
+{
     // Вычисляем размер при НУЛЕВОМ угле поворота
     $horiz = imageTtfBBox($size, 0, $fontfile, $text);
     // Вычисляем синус и косинус угла поворота
@@ -38,7 +39,8 @@ function imageTtfSize(
   float $angle,
   string $fontfile,
   string $text
-) : array {
+) : array
+{
     // Вычисляем охватывающий многоугольник
     $box = imageTtfBBoxFixed($size, $angle, $fontfile, $text);
     $x = [$box[0], $box[2], $box[4], $box[6]];
