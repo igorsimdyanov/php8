@@ -1,5 +1,5 @@
 <?php
-function headers($hostname)
+function headers(string $hostname) : array
 {
     // Задаем адрес удаленного сервера
     $curl = curl_init($hostname);
