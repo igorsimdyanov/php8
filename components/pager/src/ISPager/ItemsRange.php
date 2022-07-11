@@ -51,12 +51,12 @@ class ItemsRange extends View
         $total_pages = $this->pager->getPagesCount();
 
         // Проверяем есть ли ссылки слева
-        if($current_page - $this->pager->getVisibleLinkCount() > 1) {
+        if ($current_page - $this->pager->getVisibleLinkCount() > 1) {
             $range = $this->range(1, $this->pager->getItemsPerPage());
             $return_page .= $this->link($range, 1)." ... ";
             // Есть
             $init = $current_page - $this->pager->getVisibleLinkCount();
-            for($i = $init; $i < $current_page; $i++) {
+            for ($i = $init; $i < $current_page; $i++) {
                 $range = $this->range(
                     (($i - 1) * $this->pager->getItemsPerPage() + 1),
                     $i * $this->pager->getItemsPerPage());
@@ -64,7 +64,7 @@ class ItemsRange extends View
             }
         } else {
             // Нет
-            for($i = 1; $i < $current_page; $i++) {
+            for ($i = 1; $i < $current_page; $i++) {
                 $range = $this->range(
                     (($i - 1) * $this->pager->getItemsPerPage() + 1),
                     $i * $this->pager->getItemsPerPage());
@@ -72,11 +72,11 @@ class ItemsRange extends View
             }
         }
         // Проверяем есть ли ссылки справа
-        if($current_page + $this->pager->getVisibleLinkCount() < $total_pages) {
+        if ($current_page + $this->pager->getVisibleLinkCount() < $total_pages) {
             // Есть
             $cond = $current_page + $this->pager->getVisibleLinkCount();
-            for($i = $current_page; $i <= $cond; $i++) {
-                if($current_page == $i) {
+            for ($i = $current_page; $i <= $cond; $i++) {
+                if ($current_page == $i) {
                     $return_page .= " ".$this->range(
                         (($i - 1) * $this->pager->getItemsPerPage() + 1),
                         $i * $this->pager->getItemsPerPage())." ";
@@ -93,9 +93,9 @@ class ItemsRange extends View
             $return_page .= " ... ".$this->link($range, $total_pages)." ";
         } else {
             // Нет
-            for($i = $current_page; $i <= $total_pages; $i++) {
-                if($total_pages == $i) {
-                    if($current_page == $i) {
+            for ($i = $current_page; $i <= $total_pages; $i++) {
+                if ($total_pages == $i) {
+                    if ($current_page == $i) {
                         $return_page .= " ".$this->range(
                             (($i - 1) * $this->pager->getItemsPerPage() + 1),
                             $this->pager->getItemsCount())." ";
@@ -106,7 +106,7 @@ class ItemsRange extends View
                         $return_page .= " ".$this->link($range, $i)." ";
                     }
                 } else {
-                    if($current_page == $i) {
+                    if ($current_page == $i) {
                         $return_page .= " ".$this->range(
                             (($i - 1) * $this->pager->getItemsPerPage() + 1),
                             $i * $this->pager->getItemsPerPage())." ";

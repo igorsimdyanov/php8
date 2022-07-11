@@ -26,7 +26,7 @@ class PagesList extends View
      * @param Pager $pager объект постраничной навигации
      * @return String
      */
-    public function render(Pager $pager) {
+    public function render(Pager $pager) : string {
 
         // Объект постраничной навигации
         $this->pager = $pager;
@@ -42,37 +42,37 @@ class PagesList extends View
         // Ссылка на первую страницу
         $return_page .= $this->link('&lt;&lt;', 1)." ... ";
         // Выводим ссылку "Назад", если это не первая страница 
-        if($current_page != 1) {
+        if ($current_page != 1) {
             $return_page .= $this->link('&lt;', $current_page - 1)." ... "; 
         }
       
         // Выводим предыдущие элементы 
-        if($current_page > $this->pager->getVisibleLinkCount() + 1) { 
+        if ($current_page > $this->pager->getVisibleLinkCount() + 1) { 
             $init = $current_page - $this->pager->getVisibleLinkCount();
-            for($i = $init; $i < $current_page; $i++) { 
+            for ($i = $init; $i < $current_page; $i++) { 
                 $return_page .= $this->link($i, $i)." "; 
             } 
         } else { 
-            for($i = 1; $i < $current_page; $i++) { 
+            for ($i = 1; $i < $current_page; $i++) { 
                 $return_page .= $this->link($i, $i)." "; 
             } 
         } 
         // Выводим текущий элемент 
         $return_page .= "$i "; 
         // Выводим следующие элементы 
-        if($current_page + $this->pager->getVisibleLinkCount() < $total_pages) { 
+        if ($current_page + $this->pager->getVisibleLinkCount() < $total_pages) { 
             $cond = $current_page + $this->pager->getVisibleLinkCount();
-            for($i = $current_page + 1; $i <= $cond; $i++) { 
+            for ($i = $current_page + 1; $i <= $cond; $i++) { 
                 $return_page .= $this->link($i, $i)." "; 
             } 
         } else { 
-            for($i = $current_page + 1; $i <= $total_pages; $i++) { 
+            for ($i = $current_page + 1; $i <= $total_pages; $i++) { 
                $return_page .= $this->link($i, $i)." "; 
             } 
         } 
 
         // Выводим ссылку вперёд, если это не последняя страница 
-        if($current_page != $total_pages) {
+        if ($current_page != $total_pages) {
             $return_page .= " ... ".$this->link('&gt;', $current_page + 1);
         }
         // Ссылка на последнюю страницу

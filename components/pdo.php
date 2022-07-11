@@ -8,14 +8,14 @@ spl_autoload_register(function($class){
 try {
     $pdo = new PDO(
         'pgsql:host=localhost;dbname=test',
-        'root');
+        'user');
     $obj = new ISPager\PdoPager(
         new ISPager\PagesList(),
         $pdo,
         'languages');
 
     // Содержимое текущей страницы
-    foreach($obj->getItems() as $language) {
+    foreach ($obj->getItems() as $language) {
         echo htmlspecialchars($language['name']) . '<br />';
     }
 
@@ -24,4 +24,5 @@ try {
 }
 catch (PDOException $e) {
     echo 'Невозможно установить соединение с базой данных';
+    print_r($e);
 }
