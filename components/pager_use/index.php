@@ -6,7 +6,7 @@ $obj = new ISPager\FilePager(
     '../../math/largetextfile.txt');
 
 // Содержимое текущей страницы
-foreach($obj->getItems() as $line) {
+foreach ($obj->getItems() as $line) {
     echo htmlspecialchars($line) . '<br />';
 }
 

@@ -7,14 +7,14 @@ spl_autoload_register(function($class){
 try {
     $pdo = new PDO(
         'pgsql:host=localhost;dbname=test',
-        'root');
+        'user');
     $obj = new ISPager\PdoPager(
         new ISPager\ItemsRange(),
         $pdo,
         'languages');
 
     // Содержимое текущей страницы
-    foreach($obj->getItems() as $language) {
+    foreach ($obj->getItems() as $language) {
         echo htmlspecialchars($language['name']) . '<br />';
     }
 

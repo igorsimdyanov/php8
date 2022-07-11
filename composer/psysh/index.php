@@ -12,6 +12,5 @@ $log->pushHandler($handler);
 # Вызываем интерактивный отладчик
 eval(\Psy\sh());
 
-
 $log->warning('Предупреждение');
 $log->error('Ошибка');

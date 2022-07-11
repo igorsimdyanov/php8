@@ -40,15 +40,15 @@ class DirPager extends Pager
         $get_params = null,
         $counter_param = 'page')
     {
-      // Удаляем последний символ /, если он имеется
-      $this->dirname = ltrim($dir_name, "/");
-      // Инициализируем переменные через конструктор базового класса
-      parent::__construct(
-          $view,
-          $items_per_page,
-          $links_count,
-          $get_params,
-          $counter_param);
+        // Удаляем последний символ /, если он имеется
+        $this->dirname = ltrim($dir_name, "/");
+        // Инициализируем переменные через конструктор базового класса
+        parent::__construct(
+            $view,
+            $items_per_page,
+            $links_count,
+            $get_params,
+            $counter_param);
     }
 
     /**
@@ -58,8 +58,8 @@ class DirPager extends Pager
     {
         $countline = 0;
         // Открываем директорию
-        if(($dir = opendir($this->dirname)) !== false) {
-            while(($file = readdir($dir)) !== false) {
+        if (($dir = opendir($this->dirname)) !== false) {
+            while (($file = readdir($dir)) !== false) {
                 // Если текущая позиция является файлом
                 // подсчитываем её
                 if(is_file($this->dirname."/".$file)) {
@@ -82,7 +82,7 @@ class DirPager extends Pager
       $total_pages = $this->getPagesCount();
       // Проверяем попадает ли запрашиваемый номер 
       // страницы в интервал от минимального до максимального
-      if($current_page <= 0 || $current_page > $total_pages) {
+      if ($current_page <= 0 || $current_page > $total_pages) {
           return 0;
       }
       // Извлекаем позиции текущей страницы
@@ -95,21 +95,20 @@ class DirPager extends Pager
           return 0;
       }
       $i = -1;
-      while(($file = readdir($dir)) !== false)
-      {
+      while (($file = readdir($dir)) !== false) {
           // Если текущая позиция является файлом
-          if(is_file($this->dirname."/".$file)) {
+          if (is_file($this->dirname."/".$file)) {
               // Увеличиваем счётчик
               $i++;
               // Пока не достигнут номер $first
               // досрочно заканчиваем итерацию
-              if($i < $first) continue;
+              if ($i < $first) continue;
               // Если достигнут конец выборки
               // досрочно покидаем цикл
-              if($i > $first + $this->getItemsPerPage() - 1) break;
+              if ($i > $first + $this->getItemsPerPage() - 1) break;
               // Помещаем пути к файлам в массив,
               // который будет возвращён методом
-              $arr[] = $this->dirname."/".$file;
+              $arr[] = $this->dirname . '/' . $file;
           }
       }
       // Закрываем директорию

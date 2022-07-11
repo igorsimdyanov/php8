@@ -21,7 +21,7 @@ class FilePager extends Pager
     /**
      * @var String путь файлу
      */
-    protected $filename;
+    protected string $filename;
     /**
      * Конструктор
      *
@@ -34,11 +34,11 @@ class FilePager extends Pager
      */
     public function __construct(
         View $view,
-        $filename = '.',
-        $items_per_page = 10,
-        $links_count = 3,
-        $get_params = null,
-        $counter_param = 'page')
+        string $filename = '.',
+        int $items_per_page = 10,
+        int $links_count = 3,
+        string $get_params = null,
+        string $counter_param = 'page')
     {
       $this->filename   = $filename;
       // Инициализируем переменные через конструктор базового класса
@@ -52,14 +52,14 @@ class FilePager extends Pager
     /**
      * {@inheritdoc}
      */
-    public function getItemsCount()
+    public function getItemsCount() : int
     {
         $countline = 0;
         // Открываем файл
         $fd = fopen($this->filename, "r");
-        if($fd) {
+        if ($fd) {
             // Подсчитываем количество записей в файле
-            while(!feof($fd)) {
+            while (!feof($fd)) {
                 fgets($fd, 10000);
                 $countline++;
             }
@@ -71,7 +71,7 @@ class FilePager extends Pager
     /**
      * {@inheritdoc}
      */
-    public function getItems()
+    public function getItems() : array
     {
         // Текущая страница
         $current_page = $this->getCurrentPage();
@@ -81,7 +81,7 @@ class FilePager extends Pager
         $total_pages = $this->getPagesCount();
         // Проверяем попадает ли запрашиваемый номер 
         // страницы в интервал от минимального до максимального
-        if($current_page <= 0 || $current_page > $total_pages) {
+        if ($current_page <= 0 || $current_page > $total_pages) {
             return 0;
         }
         // Извлекаем позиции текущей страницы
@@ -91,14 +91,14 @@ class FilePager extends Pager
         // Номер, начиная с которого следует
         // выбирать строки файла
         $first = ($current_page - 1) * $this->getItemsPerPage();
-        for($i = 0; $i < $total; $i++) {
+        for ($i = 0; $i < $total; $i++) {
             $str = fgets($fd, 10000);
             // Пока не достигнут номер $first
             // досрочно заканчиваем итерацию
-            if($i < $first) continue;
+            if ($i < $first) continue;
             // Если достигнут конец выборки
             // досрочно покидаем цикл
-            if($i > $first + $this->getItemsPerPage() - 1) break;
+            if ($i > $first + $this->getItemsPerPage() - 1) break;
             // Помещаем строки файла в массив,
             // который будет возвращён методом
             $arr[] = $str;
