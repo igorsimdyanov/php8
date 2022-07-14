@@ -1,10 +1,10 @@
 <?php
 require_once('connect.php');
 
-$query = 'SELECT * FROM catalogs ORDER BY id';
-$cat = $pdo->query($query);
-
 try {
+    $query = 'SELECT * FROM catalogs ORDER BY id';
+    $cat = $pdo->query($query);
+
     while($catalog = $cat->fetch()) {
         echo $catalog['name'] . '<br />';
     }
