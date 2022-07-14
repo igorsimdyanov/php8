@@ -23,6 +23,6 @@ abstract class Page
     public function render()
     {
         echo '<h1>' . htmlspecialchars($this->title()) . '</h1>';
-        echo '</p>' . nl2br(htmlspecialchars($this->content())) . '</p>';
+        echo '<p>' . nl2br(htmlspecialchars($this->content())) . '</p>';
     }
 }

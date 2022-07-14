@@ -57,7 +57,7 @@ class Cached extends Page
     }
 
     // Получение заголовка страницы
-    public function title()
+    final public function title()
     {
         // if ($this->isCached($this->id('title'))) {
         //   return $this->get($this->id('title'));
@@ -66,7 +66,7 @@ class Cached extends Page
         // }
     }
     // Получение содержимое страницы
-    public function content()
+    final public function content()
     {
         // if ($this->isCached($this->id('content'))) {
         //   return $this->get($this->id('content'));
