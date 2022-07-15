@@ -38,7 +38,7 @@
     }
 
   $now = getdate();
-  $cal = makeCal($now['year'], $now['mon'] - 1);
+  $cal = makeCal($now['year'], $now['mon']);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
