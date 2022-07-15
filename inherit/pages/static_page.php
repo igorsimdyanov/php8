@@ -18,6 +18,8 @@ class StaticPage extends Cached
             // $sth = $dbh->execute($query, [$id]);
             // $page = $sth->fetch(PDO::FETCH_ASSOC);
             // parent::__construct($page['title'], $page['title']);
+            // Устанавливаем признак кэша страницы
+            // $this->set($this->id($id), 1);
             parent::__construct('Контакты', 'Содержимое страницы Контакты');
         }
     }
