@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <title>Альтернативные теги</title>
-    <meta charset='utf-8'>
+    <meta charset='utf-8' />
   </head>
   <body>
     <?= "Hello, world!"; ?>
