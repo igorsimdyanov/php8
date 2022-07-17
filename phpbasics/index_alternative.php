@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <title>Простейший PHP-скрипт</title>
-    <meta charset='utf-8'>
+    <meta charset='utf-8' />
   </head>
   <body>
     <?php
