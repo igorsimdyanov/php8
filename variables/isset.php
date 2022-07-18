@@ -2,13 +2,13 @@
 // Объявляем пустую переменную
 $str = '';
 
-if(isset($str)) { // true
+if (isset($str)) { // true
     echo 'Переменная $str существует<br />';
 }
 
 // Помечаем переменную $str как неинициализированную
 $str = null;
-if(isset($str)) { // false
+if (isset($str)) { // false
     echo 'Переменная $str существует<br />';
 }
 
@@ -17,10 +17,10 @@ $a = 'variable';
 $b = 'another variable';
 
 // Проверяем существование переменных
-if(isset($a)) { // true
+if (isset($a)) { // true
     echo 'Переменная $a существует<br />';
 }
-if(isset($a, $b)) { // true
+if (isset($a, $b)) { // true
     echo 'Переменные $a и $b существуют<br />';
 }
 
@@ -28,9 +28,9 @@ if(isset($a, $b)) { // true
 unset ($a);
 
 // Проверяем существование переменных
-if(isset($a)) { // false
+if (isset($a)) { // false
     echo 'Переменная $a существует<br />';
 }
-if(isset($a, $b)) { // false
+if (isset($a, $b)) { // false
     echo 'Переменные $a и $b существуют<br />';
 }
