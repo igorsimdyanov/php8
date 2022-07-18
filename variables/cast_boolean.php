@@ -1,10 +1,10 @@
 <?php
-// Объявляем нулевое вещественное число
 $float = 0.0;
-if($float) { // false
+if ($float) { // false
     echo 'Переменная $float рассматривается как true';
 }
+
 $str = "Hello, world!";
-if($str) { // true
+if ($str) { // true
     echo 'Переменная $str рассматривается как true';
 }

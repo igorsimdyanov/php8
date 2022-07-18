@@ -3,11 +3,11 @@
 $str = '';
 
 // Проверяем существование переменной
-if(isset($str)) { // true
+if (isset($str)) { // true
     echo 'Переменная $str существует<br />';
 }
 
 // Проверяем, не пустая ли переменная
-if(empty($str)) { // true
+if (empty($str)) { // true
     echo 'Переменная $str пустая<br />';
 }
