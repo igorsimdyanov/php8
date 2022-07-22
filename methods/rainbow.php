@@ -1,5 +1,6 @@
 <?php
-class Rainbow {
+class Rainbow
+{
     private const COLORS = [
         'red' => 'красный',
         'orange' => 'оранжевый',
@@ -12,7 +13,7 @@ class Rainbow {
 
     public function __get(string $key) : ?string
     {
-        if(array_key_exists($key, Rainbow::COLORS)) {
+        if (array_key_exists($key, Rainbow::COLORS)) {
             return Rainbow::COLORS[$key];
         } else {
             return null;

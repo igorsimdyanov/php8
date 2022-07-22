@@ -1,7 +1,7 @@
 <?php
 function block()
 {
-    while(true) {
+    while (true) {
         $string = yield;
         echo $string;
     }

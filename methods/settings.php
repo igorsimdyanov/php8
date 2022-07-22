@@ -1,10 +1,11 @@
 <?php
-class Settings {
+class Settings
+{
     private array $properties;
 
     public function __get(string $key) : ?string
     {
-        if(array_key_exists($key, $this->properties)) {
+        if (array_key_exists($key, $this->properties)) {
             return $this->properties[$key];
         } else {
             return null;

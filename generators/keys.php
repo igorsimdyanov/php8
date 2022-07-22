@@ -1,7 +1,7 @@
 <?php
 function collect(array $arr, callable $callback)
 {
-    foreach($arr as $key => $value) {
+    foreach ($arr as $key => $value) {
         yield $key => $callback($value);
     }
 }
@@ -16,6 +16,6 @@ $arr = [
 ];
 
 $collect = collect($arr, fn($e) => $e * $e);
-foreach($collect as $key => $val) {
+foreach ($collect as $key => $val) {
     echo "$val ($key) ";
 }

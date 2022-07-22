@@ -2,7 +2,8 @@
 function father($a)
 {
     echo $a, "<br />";
-    function child($b) {
+    function child($b)
+    {
         echo $b + 1, "<br />";
         return $b * $b;
     }
