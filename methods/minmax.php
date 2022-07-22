@@ -3,7 +3,7 @@ class MinMax
 {
     public function __call(string $method, array $arr)
     {
-        switch($method) {
+        switch ($method) {
             case 'min':
                 return $this->min($arr);
             case 'max':
@@ -17,7 +17,7 @@ class MinMax
     {
         $result = $arr[0];
 
-        foreach($arr as $value) {
+        foreach ($arr as $value) {
             if ($value < $result) {
                 $result = $value;
             }
@@ -30,7 +30,7 @@ class MinMax
     {
         $result = $arr[0];
 
-        foreach($arr as $value) {
+        foreach ($arr as $value) {
             if ($value > $result) {
                 $result = $value;
             }
