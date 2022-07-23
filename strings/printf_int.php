@@ -1,5 +1,5 @@
 <?php
 echo '<pre>';
-printf('% 4d\n', 45); // '   45'
-printf('%04d\n', 45); // '00045'
+printf('% 5d\n', 45); // '   45'
+printf('%05d\n', 45); // '00045'
 echo '</pre>';
