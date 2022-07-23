@@ -7,7 +7,9 @@
 <body>
   <?php
   if (!empty($_POST['doUpload'])) {
-      echo '<pre>Содержимое $_FILES: '.print_r($_FILES, true).'</pre><hr />';
+      echo '<pre>Содержимое $_FILES: ' . 
+           print_r($_FILES, true) . 
+           '</pre><hr />';
   }
   ?>
   Выберите какой-нибудь файл в форме ниже:

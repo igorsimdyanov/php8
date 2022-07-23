@@ -1,10 +1,12 @@
 <?php
-class PhotoAlbum {
+class PhotoAlbum
+{
     const IMAGE_DIR = 'img';
 
     private array $current_file;
 
-    public function __construct(array $arr) {
+    public function __construct(array $arr)
+    {
         // Создаем каталог для файлов, если он еще не существует
         if (!file_exists(self::IMAGE_DIR)) {
             mkdir(self::IMAGE_DIR, 0777);
