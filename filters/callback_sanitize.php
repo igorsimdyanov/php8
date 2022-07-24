@@ -1,5 +1,6 @@
 <?php
-function filterTags($value) {
+function filterTags($value)
+{
     return strip_tags($value);
 }
 
