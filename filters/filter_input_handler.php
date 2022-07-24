@@ -1,8 +1,8 @@
 <?php
 $value = filter_input(
-           INPUT_POST,
-           'search',
-           FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+             INPUT_POST,
+             'search',
+             FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $result = filter_input(
     INPUT_POST,
     'search',

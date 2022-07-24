@@ -9,13 +9,13 @@ $options = [
     ]
 ];
 
-if(filter_var($first, FILTER_VALIDATE_INT, $options)) {
+if (filter_var($first, FILTER_VALIDATE_INT, $options)) {
     echo "$first входит в диапазон -10 .. 10<br />";
 } else {
     echo "$first не входит в диапазон -10 .. 10<br />";
 }
 
-if(filter_var($second, FILTER_VALIDATE_INT, $options)) {
+if (filter_var($second, FILTER_VALIDATE_INT, $options)) {
     echo "$second входит в диапазон -10 .. 10<br />";
 } else {
     echo "$second не входит в диапазон -10 .. 10<br />";
