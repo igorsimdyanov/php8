@@ -6,7 +6,7 @@ $file_count = 0;
 $dir_count = 0;
 
 // Подсчитываем количество файлов и подкаталогов
-while(($file = $cat->read()) !== false) {
+while (($file = $cat->read()) !== false) {
     if (is_file($dirname.$file)) $file_count++;
     else $dir_count++;
 }
@@ -21,7 +21,7 @@ echo "Каталог $dirname содержит $file_count файлов
 $cat->rewind();
 
 // Читаем содержимое каталога
-while(($file = $cat->read()) !== false) {
+while (($file = $cat->read()) !== false) {
     if ($file != '.' && $file != '..') {
         echo $file . '<br />';
     }
