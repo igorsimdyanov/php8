@@ -10,6 +10,7 @@ $str = preg_replace_callback_array(
             return "<strong>$m[1]</strong>";
         }
     ],
-    $str);
+    $str
+);
 
 echo htmlspecialchars($str);
