@@ -9,7 +9,10 @@ class Cached extends Page
     protected $store;
 
     // Конструктор класса
-    public function __construct($title = '', $content = '', $expires = 60)
+    public function __construct(
+        $title = '',
+        $content = '',
+        $expires = 60)
     {
         // Вызываем конструктор базового класса Page
         parent::__construct($title, $content);

@@ -18,7 +18,10 @@ class StaticPage extends Cached
             // $sth = $dbh->execute($query, [$id]);
             // $page = $sth->fetch(PDO::FETCH_ASSOC);
             // parent::__construct($page['title'], $page['title']);
-            parent::__construct('Новости', 'Содержимое страницы Новости');
+            parent::__construct(
+                'Новости',
+                'Содержимое страницы Новости'
+            );
         }
     }
 
