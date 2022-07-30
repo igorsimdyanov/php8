@@ -13,14 +13,19 @@ class StaticPage extends Cached
         } else {
             // Данные пока не кэшированы, извлекаем
             // содержимое из базы данных
-            // $query = "SELECT * FROM static_pages WHERE id = :id LIMIT 1"
+            // $query = "SELECT * 
+            //           FROM static_pages
+            //           WHERE id = :id LIMIT 1"
             // $sth = $dbh->prepare($query);
             // $sth = $dbh->execute($query, [$id]);
             // $page = $sth->fetch(PDO::FETCH_ASSOC);
             // parent::__construct($page['title'], $page['title']);
             // Устанавливаем признак кэша страницы
             // $this->set($this->id($id), 1);
-            parent::__construct('Контакты', 'Содержимое страницы Контакты');
+            parent::__construct(
+                'Контакты',
+                'Содержимое страницы Контакты'
+            );
         }
     }
 
