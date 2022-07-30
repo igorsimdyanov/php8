@@ -1,7 +1,8 @@
 <?php
 // Вычисляет timestamp в Гринвиче, который соответствует
 // локальному timestamp-формату
-function local2utc($localStamp = false) {
+function local2utc($localStamp = false)
+{
     if ($localStamp === false) $localStamp = time();
 
     // Получаем смещение часовой зоны в секундах
@@ -16,7 +17,8 @@ function local2utc($localStamp = false) {
 // смещение локальной зоны относительно UTC (в часах),
 // тогда будет осуществлен перевод в эту зону
 // (а не в текущую локальную).
-function utc2local($gmStamp = false, $tzOffset = false) {
+function utc2local($gmStamp = false, $tzOffset = false)
+{
     if ($gmStamp === false) return time();
 
     // Получаем смещение часовой зоны в секундах
