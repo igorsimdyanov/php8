@@ -27,8 +27,8 @@
       <tr>
         <td><?= $str ?></td>
         <td><?= $stamp = strtotime($str) ?></td>
-        <td><?= date("Y-m-d H:i:s", $stamp) ?></td>
-        <td><?= date("Y-m-d H:i:s", time()) ?></td>
+        <td><?= date('Y-m-d H:i:s', $stamp) ?></td>
+        <td><?= date('Y-m-d H:i:s', time()) ?></td>
       </tr>
     <?php } ?>
   </table>
