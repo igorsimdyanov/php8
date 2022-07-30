@@ -29,7 +29,7 @@ if (!empty($_POST)) {
 
 // Выводим сообщения об ошибках, если они имеются
 if (!empty($errors)) {
-    foreach($errors as $err) {
+    foreach ($errors as $err) {
         echo "<span style=\"color:red\">$err</span><br>";
     }
 }
