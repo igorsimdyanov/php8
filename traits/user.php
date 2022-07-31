@@ -8,7 +8,8 @@ class User
         public ?string $last_name = null)
     {}
 
-    public function fullName() : string {
+    public function fullName() : string
+    {
         $arr_name = array_filter([$this->first_name, $this->last_name]);
         $full_name = implode(' ', $arr_name);
         return empty($full_name) ? 'Анонимный пользователь' : $full_name;

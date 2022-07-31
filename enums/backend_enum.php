@@ -1,5 +1,6 @@
 <?php 
-interface BackedEnum extends UnitEnum {
+interface BackedEnum extends UnitEnum
+{
     /* Методы */
     public static from(int|string $value): static
     public static tryFrom(int|string $value): ?static

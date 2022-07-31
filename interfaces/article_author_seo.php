@@ -3,7 +3,8 @@ require_once 'topic.php';
 require_once 'author.php';
 require_once 'seo.php';
 
-class Article extends Topic implements Author, Seo {
+class Article extends Topic implements Author, Seo
+{
     public array $authors;
     private ?string $seo_title;
     private ?string $seo_description;
@@ -28,7 +29,7 @@ class Article extends Topic implements Author, Seo {
     }
     public function title() : ?string
     {
-        if(!empty($this->seo_title)) {
+        if (!empty($this->seo_title)) {
             return $this->seo_title;
         } else {
             return $this->title;

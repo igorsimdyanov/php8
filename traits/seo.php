@@ -16,7 +16,7 @@ trait Seo
     }
     public function title() : ?string
     {
-        if(!empty($this->seo_title)) {
+        if (!empty($this->seo_title)) {
             return $this->seo_title;
         } else {
             return $this->title;
