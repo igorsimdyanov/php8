@@ -1,5 +1,6 @@
 <?php
-class AttributeException extends Exception {
+class AttributeException extends Exception
+{
     public function __construct(
         $attribute,
         $message = 'Атрибут %s не определен'

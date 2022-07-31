@@ -1,5 +1,6 @@
 <?php
-class PasswordException extends Exception {
+class PasswordException extends Exception
+{
     public function __construct(
         $message = 'Не допускается прямое обращение к свойству password'
     )

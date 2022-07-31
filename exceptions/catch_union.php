@@ -9,16 +9,12 @@ try {
         'Симдянов');
 
     echo $user->password;
-}
-catch(AttribueException | PasswordException $exp)
-{
+} catch (AttribueException | PasswordException $exp) {
     echo 'Пользовательские исключения<br />';
     echo "Исключение: {$exp->getMessage()}<br />";
     echo "в файле {$exp->getFile()}<br />";
     echo "в строке {$exp->getLine()}<br />";
-}
-catch(Exception $exp)
-{
+} catch (Exception $exp) {
     echo 'Прочие исключения<br />';
     echo "Исключение: {$exp->getMessage()}<br />";
     echo "в файле {$exp->getFile()}<br />";

@@ -9,9 +9,7 @@ try {
         'Симдянов');
 
     echo $user->password;
-}
-catch(Exception $exp)
-{
+} catch (Exception $exp) {
     echo "Исключение: {$exp->getMessage()}<br />";
     echo "в файле {$exp->getFile()}<br />";
     echo "в строке {$exp->getLine()}<br />";

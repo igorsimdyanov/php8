@@ -14,7 +14,7 @@ class User
 
     public function __get(string $index) : ?string
     {
-        if($index == 'password') {
+        if ($index == 'password') {
             throw new PasswordException;
         }
         if (isset($this->$index)) {
@@ -26,12 +26,11 @@ class User
 
     public function __set(string $index, string $value) : void
     {
-      if (isset($this->$index)) {
-          $this->$index = $value;
-      }
-      else {
-          throw new AttributeException($index);
-      }
+        if (isset($this->$index)) {
+            $this->$index = $value;
+        } else {
+            throw new AttributeException($index);
+        }
     }
 
     public function isPasswordCorrect($password)
