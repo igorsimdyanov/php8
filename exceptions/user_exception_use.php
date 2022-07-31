@@ -9,9 +9,7 @@ try {
         'Симдянов');
 
     $user->var = 100;
-}
-catch(Exception $exp)
-{
+} catch (Exception $exp) {
     // Блок обработки исключительной ситуации
     echo "Исключение: {$exp->getMessage()}<br />";
     echo "в файле {$exp->getFile()}<br />";

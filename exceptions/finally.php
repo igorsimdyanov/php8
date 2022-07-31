@@ -9,16 +9,10 @@ try {
         'Симдянов');
 
     // echo $user->password;
-}
-catch(AttribueException $exp)
-{
+} catch (AttribueException $exp) {
     echo 'AttribueException-исключение<br />';
-}
-catch(PasswordException $exp)
-{
+} catch (PasswordException $exp) {
     echo 'PasswordException-исключение<br />';
-}
-finally
-{
+} finally {
     echo 'Эта строка выводится не всегда<br />';
 }

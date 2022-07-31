@@ -9,18 +9,12 @@ try {
         'Симдянов');
 
     echo $user->password;
-}
-catch(Exception $exp)
-{
+} catch (Exception $exp) {
     echo 'ExceptionSQL-исключение ' . $exp::class . '<br />';
     // Передача исключения далее по каскаду
     throw $exp;
-}
-catch(AttribueException $exp)
-{
+} catch (AttribueException $exp) {
     echo 'AttribueException-исключение';
-}
-catch(PasswordException $exp)
-{
+} catch (PasswordException $exp) {
     echo 'PasswordException-исключение';
 }
