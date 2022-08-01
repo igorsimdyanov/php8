@@ -2,8 +2,7 @@
 function treeRmdir($directory)
 {
     $dir = opendir($directory);
-    while (($file = readdir($dir)) !== false)
-    {
+    while (($file = readdir($dir)) !== false) {
         // Если функция readdir() вернула файл — удаляем его
         if (is_file("$directory/$file")) {
             unlink("$directory/$file");
@@ -15,7 +14,7 @@ function treeRmdir($directory)
                 $file != "." &&
                 $file != "..")
         {
-          treeRmdir("$directory/$file");
+            treeRmdir("$directory/$file");
         }
    }
    closedir($dir);
@@ -23,4 +22,3 @@ function treeRmdir($directory)
 }
 
 treeRmdir('temp');
-
