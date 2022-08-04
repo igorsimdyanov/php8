@@ -11,6 +11,6 @@ function strlen($str)
 // }
 
 // Это PHP8\strlen
-echo strlen('Hello world!').'<br />';
+echo strlen('Hello world!') . '<br />';
 // Это стандартная функция strlen()
-echo \strlen('Hello world!').'<br />';
+echo \strlen('Hello world!') . '<br />';

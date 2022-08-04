@@ -14,6 +14,7 @@ class Page
 {
     protected $title;
     protected $content;
+
     public function __construct(string $title = '', string $content = '')
     {
         $this->title = $title;

@@ -2,8 +2,6 @@
 try {
     $str = 'Hello world!';
     $str[] = 4;
-}
-catch(Exception $exp)
-{
+} catch (Exception $exp) {
     echo 'Попытка обработать ошибку при помощи catch-блока';
 }
