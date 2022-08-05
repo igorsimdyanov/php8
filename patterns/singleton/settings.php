@@ -21,7 +21,7 @@ final class Settings
 
     public function __get($key) : mixed
     {
-        if(array_key_exists($key, $this->_settings)) {
+        if (array_key_exists($key, $this->_settings)) {
             return $this->_settings[$key];
         } else {
             return null;
