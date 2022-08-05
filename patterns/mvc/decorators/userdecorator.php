@@ -12,12 +12,17 @@ class UserDecorator extends DecoratorFactory
 
     public function title() : string
     {
-       return implode(' ', [$this->user->first_name, $this->user->last_name]);
+        return implode(
+            ' ',
+            [$this->user->first_name, $this->user->last_name]
+        );
     }
 
     public function body() : string
     {
-        return '<strong>' . htmlspecialchars($this->title()) . '</strong> '.
+        return '<strong>' .
+                   htmlspecialchars($this->title()) .
+              '</strong> '.
                '(' . htmlspecialchars($this->user->email) . ')';
 
     }
@@ -25,8 +30,12 @@ class UserDecorator extends DecoratorFactory
     public function items() : string
     {
         return '<item>'.
-               '<title>' . htmlspecialchars($this->title()) . '</title>' .
-               '<email>' . htmlspecialchars($this->user->email) . '</email>'.
+               '<title>' .
+                   htmlspecialchars($this->title()) .
+               '</title>' .
+               '<email>' .
+                   htmlspecialchars($this->user->email) .
+               '</email>' .
                '</item>';
     }
 }

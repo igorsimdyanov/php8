@@ -10,7 +10,10 @@ abstract class ViewFactory
         string $class,
         \MVC\Decorators\DecoratorFactory $decorator) : ViewFactory
     {
-        $class = 'MVC\\Views\\' . ucfirst($class) . ucfirst($type) . 'View';
+        $class = 'MVC\\Views\\' .
+                 ucfirst($class) .
+                 ucfirst($type) .
+                 'View';
         $obj = new $class($decorator);
 
         return $obj;
