@@ -4,7 +4,7 @@ function recursion_dir($path)
     static $depth = 0;
 
     $dir = opendir($path);
-    while(($file = readdir($dir)) !== false) {
+    while (($file = readdir($dir)) !== false) {
         if ($file == '.' || $file == '..' ) continue;
         echo str_repeat('-', $depth)." $file<br />";
 

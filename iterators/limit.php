@@ -8,6 +8,6 @@ $limit = new LimitIterator(
             0,
             5);
 
-foreach($limit as $file) {
+foreach ($limit as $file) {
     echo $file . '<br />';
 }

@@ -17,7 +17,7 @@ class FSDirectoryIterator implements \Iterator
         $this->rewind();
     }
     //*
-    //* Далее идут переопределения виртуальных методов интерфейса Iterator
+    //* Переопределения виртуальных методов интерфейса Iterator
     //*
     // Устанавливает итератор на первый элемент
     public function rewind() : void
@@ -28,7 +28,8 @@ class FSDirectoryIterator implements \Iterator
     // Проверяет, не закончились ли уже элементы
     public function valid() : bool
     {
-        // readdir() возвращает false, когда элементы каталога закончились
+        // readdir() возвращает false,
+        // когда элементы каталога закончились
         return $this->cur !== false;
     }
     // Возвращает текущий ключ

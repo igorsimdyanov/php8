@@ -9,6 +9,6 @@ $array = ['первый',
 
 $collection = new Iterators\LimitMyIterator($array);
 
-foreach($collection as $key => $value) {
+foreach ($collection as $key => $value) {
     echo "Элемент с индексом $key и значением $value<br />";
 }

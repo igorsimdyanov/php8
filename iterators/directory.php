@@ -1,5 +1,5 @@
 <?php
 $dir = new DirectoryIterator('.');
-foreach($dir as $file) {
+foreach ($dir as $file) {
     echo $file . '<br />';
 }
