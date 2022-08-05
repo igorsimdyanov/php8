@@ -1,5 +1,6 @@
 <?php
-interface ArrayAccess {
+interface ArrayAccess
+{
     public offsetExists(mixed $offset): bool
     public offsetGet(mixed $offset): mixed
     public offsetSet(mixed $offset, mixed $value): void

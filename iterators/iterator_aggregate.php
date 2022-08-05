@@ -1,4 +1,5 @@
 <?php
-interface IteratorAggregate extends Traversable {
+interface IteratorAggregate extends Traversable
+{
     public getIterator(): Traversable
 }
