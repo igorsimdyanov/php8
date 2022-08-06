@@ -1,5 +1,6 @@
 <?php
-class ReflectionProperty implements Reflector {
+class ReflectionProperty implements Reflector
+{
     /* Константы */
     const int IS_STATIC = 16;
     const int IS_PUBLIC = 1;
@@ -13,7 +14,10 @@ class ReflectionProperty implements Reflector {
     /* Методы */
     public __construct(object|string $class, string $property)
     private __clone(): void
-    public static export(mixed $class, string $name, bool $return = ?): string
+    public static export(
+        mixed $class,
+        string $name,
+        bool $return = ?): string
     public getAttributes(?string $name = null, int $flags = 0): array
     public getDeclaringClass(): ReflectionClass
     public getDefaultValue(): mixed

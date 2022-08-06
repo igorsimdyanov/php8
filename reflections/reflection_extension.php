@@ -1,5 +1,6 @@
 <?php
-class ReflectionExtension implements Reflector {
+class ReflectionExtension implements Reflector
+{
     /* Свойства */
     public string $name;
 

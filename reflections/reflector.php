@@ -1,5 +1,6 @@
 <?php
-interface Reflector extends Stringable {
+interface Reflector extends Stringable
+{
     /* Методы */
     public static export(): string
     public __toString(): string

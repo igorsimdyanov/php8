@@ -1,5 +1,6 @@
 <?php
-class ReflectionFunction extends ReflectionFunctionAbstract {
+class ReflectionFunction extends ReflectionFunctionAbstract
+{
     /* Константы */
     const int IS_DEPRECATED = 262144;
 
@@ -17,7 +18,9 @@ class ReflectionFunction extends ReflectionFunctionAbstract {
 
     /* Наследуемые методы */
     private ReflectionFunctionAbstract::__clone(): void
-    public ReflectionFunctionAbstract::getAttributes(?string $name = null, int $flags = 0): array
+    public ReflectionFunctionAbstract::getAttributes(
+        ?string $name = null,
+        int $flags = 0): array
     public ReflectionFunctionAbstract::getClosureScopeClass(): ?ReflectionClass
     public ReflectionFunctionAbstract::getClosureThis(): ?object
     public ReflectionFunctionAbstract::getClosureUsedVariables(): array

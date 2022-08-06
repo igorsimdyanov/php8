@@ -36,7 +36,9 @@ class ReflectionClass implements Reflector {
     public getShortName(): string
     public getStartLine(): int|false
     public getStaticProperties(): ?array
-    public getStaticPropertyValue(string $name, mixed &$def_value = ?): mixed
+    public getStaticPropertyValue(
+        string $name,
+        mixed &$def_value = ?): mixed
     public getTraitAliases(): array
     public getTraitNames(): array
     public getTraits(): array
