@@ -1,9 +1,9 @@
 <?php
 // Создаем новое изображение
-$im  = imageCreate(100, 100);
-$w   = imageColorAllocate($im, 255, 255, 255);
-$c1  = imageColorAllocate($im, 0, 0, 255);
-$c2  = imageColorAllocate($im, 0, 255, 0);
+$im = imageCreate(100, 100);
+$w  = imageColorAllocate($im, 255, 255, 255);
+$c1 = imageColorAllocate($im, 0, 0, 255);
+$c2 = imageColorAllocate($im, 0, 255, 0);
 // Очищаем фон
 imageFilledRectangle($im, 0, 0, imageSX($im), imageSY($im), $w);
 // Устанавливаем стиль пера
