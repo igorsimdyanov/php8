@@ -5,7 +5,7 @@ try {
     $query = 'SELECT * FROM catalogs ORDER BY id';
     $cat = $pdo->query($query);
 
-    while($catalog = $cat->fetch()) {
+    while ($catalog = $cat->fetch()) {
         echo $catalog['name'] . '<br />';
     }
 } catch (PDOException $e) {
