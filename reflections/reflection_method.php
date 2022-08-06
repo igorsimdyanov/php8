@@ -1,5 +1,6 @@
 <?php
-class ReflectionMethod extends ReflectionFunctionAbstract {
+class ReflectionMethod extends ReflectionFunctionAbstract
+{
     /* Константы */
     const int IS_STATIC = 16;
     const int IS_PUBLIC = 1;
@@ -17,7 +18,8 @@ class ReflectionMethod extends ReflectionFunctionAbstract {
     /* Методы */
     public __construct(object|string $objectOrMethod, string $method)
     public __construct(string $classMethod)
-    public static export(string $class, string $name, bool $return = false): string
+    public static export(
+        string $class, string $name, bool $return = false): string
     public getClosure(?object $object = null): Closure
     public getDeclaringClass(): ReflectionClass
     public getModifiers(): int

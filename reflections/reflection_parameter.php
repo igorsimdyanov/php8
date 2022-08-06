@@ -1,5 +1,6 @@
 <?php
-class ReflectionParameter implements Reflector {
+class ReflectionParameter implements Reflector
+{
     /* Свойства */
     public string $name;
 
@@ -8,7 +9,10 @@ class ReflectionParameter implements Reflector {
     public allowsNull(): bool
     public canBePassedByValue(): bool
     private __clone(): void
-    public static export(string $function, string $parameter, bool $return = ?): string
+    public static export(
+        string $function,
+        string $parameter,
+        bool $return = ?): string
     public getAttributes(?string $name = null, int $flags = 0): array
     public getClass(): ?ReflectionClass
     public getDeclaringClass(): ?ReflectionClass
