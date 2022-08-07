@@ -13,7 +13,7 @@ class Controller
         $this->router = Router::parse($path);
         $class = 'MVC\\Models\\' . ucfirst($this->router->model);
         $this->model = new $class();
-        if($this->router->id) {
+        if ($this->router->id) {
             $this->model = $this->model->collection[$this->router->id];
         }
     }

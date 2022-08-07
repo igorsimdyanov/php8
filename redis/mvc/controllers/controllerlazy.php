@@ -48,10 +48,12 @@ class ControllerLazy
     private function getModel() : object
     {
         if (empty($this->model)) {
-            $class = 'MVC\\Models\\' . ucfirst($this->getRouter()->model);
+            $class = 'MVC\\Models\\' .
+                     ucfirst($this->getRouter()->model);
             $this->model = new $class();
             if ($this->getRouter()->id) {
-                $this->model = $this->model->collection[$this->getRouter()->id];
+                $this->model = 
+                    $this->model->collection[$this->getRouter()->id];
             }
         }
 
