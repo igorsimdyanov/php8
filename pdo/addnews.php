@@ -20,7 +20,9 @@ try {
     $query = 'INSERT INTO news_contents (content, news_id)
               VALUES (:content, :news_id)';
     $news = $pdo->prepare($query);
-    $news->execute(['content' => $_POST['content'], 'news_id' => $news_id]);
+    $news->execute(
+        ['content' => $_POST['content'], 'news_id' => $news_id]
+    );
 
     // Осуществляем переадресацию на главную страницу
     header('Location: news.html');
