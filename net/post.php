@@ -6,7 +6,8 @@ $opts = [
     'http' => [
         'method' => 'POST',
         'user_agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:42.0)',
-        'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+        'header' => 'Content-Type: ' .
+                    "application/x-www-form-urlencoded\r\n" .
                     'Content-Length: ' . mb_strlen($body),
         'content' => $body
     ]
