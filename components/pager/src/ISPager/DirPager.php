@@ -76,44 +76,44 @@ class DirPager extends Pager
      */
     public function getItems()
     {
-      // Текущая страница
-      $current_page = $this->getCurrentPage();
-      // Общее количество страниц
-      $total_pages = $this->getPagesCount();
-      // Проверяем попадает ли запрашиваемый номер 
-      // страницы в интервал от минимального до максимального
-      if ($current_page <= 0 || $current_page > $total_pages) {
-          return 0;
-      }
-      // Извлекаем позиции текущей страницы
-      $arr = [];
-      // Номер, начиная с которого следует
-      // выбирать строки файла
-      $first = ($current_page - 1) * $this->getItemsPerPage();
-      // Открываем директорию
-      if(($dir = opendir($this->dirname)) === false) {
-          return 0;
-      }
-      $i = -1;
-      while (($file = readdir($dir)) !== false) {
-          // Если текущая позиция является файлом
-          if (is_file($this->dirname."/".$file)) {
-              // Увеличиваем счётчик
-              $i++;
-              // Пока не достигнут номер $first
-              // досрочно заканчиваем итерацию
-              if ($i < $first) continue;
-              // Если достигнут конец выборки
-              // досрочно покидаем цикл
-              if ($i > $first + $this->getItemsPerPage() - 1) break;
-              // Помещаем пути к файлам в массив,
-              // который будет возвращён методом
-              $arr[] = $this->dirname . '/' . $file;
-          }
-      }
-      // Закрываем директорию
-      closedir($dir);
+        // Текущая страница
+        $current_page = $this->getCurrentPage();
+        // Общее количество страниц
+        $total_pages = $this->getPagesCount();
+        // Проверяем попадает ли запрашиваемый номер 
+        // страницы в интервал от минимального до максимального
+        if ($current_page <= 0 || $current_page > $total_pages) {
+            return 0;
+        }
+        // Извлекаем позиции текущей страницы
+        $arr = [];
+        // Номер, начиная с которого следует
+        // выбирать строки файла
+        $first = ($current_page - 1) * $this->getItemsPerPage();
+        // Открываем директорию
+        if(($dir = opendir($this->dirname)) === false) {
+            return 0;
+        }
+        $i = -1;
+        while (($file = readdir($dir)) !== false) {
+            // Если текущая позиция является файлом
+            if (is_file($this->dirname."/".$file)) {
+                // Увеличиваем счётчик
+                $i++;
+                // Пока не достигнут номер $first
+                // досрочно заканчиваем итерацию
+                if ($i < $first) continue;
+                // Если достигнут конец выборки
+                // досрочно покидаем цикл
+                if ($i > $first + $this->getItemsPerPage() - 1) break;
+                // Помещаем пути к файлам в массив,
+                // который будет возвращён методом
+                $arr[] = $this->dirname . '/' . $file;
+            }
+        }
+        // Закрываем директорию
+        closedir($dir);
 
-      return $arr;
+        return $arr;
     }
 }

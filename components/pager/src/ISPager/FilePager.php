@@ -40,14 +40,14 @@ class FilePager extends Pager
         string $get_params = null,
         string $counter_param = 'page')
     {
-      $this->filename   = $filename;
-      // Инициализируем переменные через конструктор базового класса
-      parent::__construct(
-          $view,
-          $items_per_page,
-          $links_count,
-          $get_params,
-          $counter_param);
+        $this->filename   = $filename;
+        // Инициализируем переменные через конструктор базового класса
+        parent::__construct(
+            $view,
+            $items_per_page,
+            $links_count,
+            $get_params,
+            $counter_param);
     }
     /**
      * {@inheritdoc}

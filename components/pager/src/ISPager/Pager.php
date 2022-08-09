@@ -131,7 +131,7 @@ abstract class Pager
      */
     public function getCurrentPage()
     {
-        if(isset($_GET[$this->getCounterParam()])) {
+        if (isset($_GET[$this->getCounterParam()])) {
             return intval($_GET[$this->getCounterParam()]);
         } else {
             return 1;
@@ -148,7 +148,9 @@ abstract class Pager
           $total = $this->getItemsCount();
           // Вычисляем количество страниц
           $result = (int)($total / $this->getItemsPerPage());
-          if((float)($total / $this->getItemsPerPage()) - $result != 0) $result++;
+          if ((float)($total / $this->getItemsPerPage()) - $result != 0) {
+              $result++;
+          }
 
           return $result;
     }
