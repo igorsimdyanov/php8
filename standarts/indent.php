@@ -1,5 +1,5 @@
 <?php
-function tabber($spaces, $echo, ...$planets)
+function tabber($spaces, $echo, ...$planets) : void
 {
     $new = [];
 
