@@ -43,7 +43,7 @@ class ItemsRange extends View
         $this->pager = $pager;
 
         // Строка для возвращаемого результата
-        $return_page = "";
+        $return_page = '';
 
         // Текущий номер страницы
         $current_page = $this->pager->getCurrentPage();
@@ -53,14 +53,14 @@ class ItemsRange extends View
         // Проверяем есть ли ссылки слева
         if ($current_page - $this->pager->getVisibleLinkCount() > 1) {
             $range = $this->range(1, $this->pager->getItemsPerPage());
-            $return_page .= $this->link($range, 1)." ... ";
+            $return_page .= $this->link($range, 1) . ' ... ';
             // Есть
             $init = $current_page - $this->pager->getVisibleLinkCount();
             for ($i = $init; $i < $current_page; $i++) {
                 $range = $this->range(
                     (($i - 1) * $this->pager->getItemsPerPage() + 1),
                     $i * $this->pager->getItemsPerPage());
-                $return_page .= " ".$this->link($range, $i)." ";
+                $return_page .= ' ' . $this->link($range, $i) . ' ';
             }
         } else {
             // Нет
@@ -68,7 +68,7 @@ class ItemsRange extends View
                 $range = $this->range(
                     (($i - 1) * $this->pager->getItemsPerPage() + 1),
                     $i * $this->pager->getItemsPerPage());
-                $return_page .= " ".$this->link($range, $i)." ";
+                $return_page .= ' ' . $this->link($range, $i) . ' ';
             }
         }
         // Проверяем есть ли ссылки справа
@@ -77,44 +77,44 @@ class ItemsRange extends View
             $cond = $current_page + $this->pager->getVisibleLinkCount();
             for ($i = $current_page; $i <= $cond; $i++) {
                 if ($current_page == $i) {
-                    $return_page .= " ".$this->range(
+                    $return_page .= ' ' . $this->range(
                         (($i - 1) * $this->pager->getItemsPerPage() + 1),
-                        $i * $this->pager->getItemsPerPage())." ";
+                        $i * $this->pager->getItemsPerPage()) . ' ';
                 } else {
                     $range = $this->range(
                         (($i - 1) * $this->pager->getItemsPerPage() + 1),
                         $i * $this->pager->getItemsPerPage());
-                    $return_page .= " ".$this->link($range, $i)." ";
+                    $return_page .= ' ' . $this->link($range, $i) . ' ';
                 }
             }
             $range = $this->range(
                 (($total_pages - 1) * $this->pager->getItemsPerPage() + 1),
                 $this->pager->getItemsCount());
-            $return_page .= " ... ".$this->link($range, $total_pages)." ";
+            $return_page .= ' ... ' . $this->link($range, $total_pages) . ' ';
         } else {
             // Нет
             for ($i = $current_page; $i <= $total_pages; $i++) {
                 if ($total_pages == $i) {
                     if ($current_page == $i) {
-                        $return_page .= " ".$this->range(
+                        $return_page .= ' ' . $this->range(
                             (($i - 1) * $this->pager->getItemsPerPage() + 1),
-                            $this->pager->getItemsCount())." ";
+                            $this->pager->getItemsCount()) . ' ';
                     } else {
                         $range = $this->range(
                             (($i - 1) * $this->pager->getItemsPerPage() + 1),
                             $this->pager->getItemsCount());
-                        $return_page .= " ".$this->link($range, $i)." ";
+                        $return_page .= ' ' . $this->link($range, $i) . ' ';
                     }
                 } else {
                     if ($current_page == $i) {
-                        $return_page .= " ".$this->range(
+                        $return_page .= ' ' . $this->range(
                             (($i - 1) * $this->pager->getItemsPerPage() + 1),
-                            $i * $this->pager->getItemsPerPage())." ";
+                            $i * $this->pager->getItemsPerPage()) . ' ';
                     } else {
                         $range = $this->range(
                             (($i - 1) * $this->pager->getItemsPerPage() + 1),
                             ($i * $this->pager->getItemsPerPage()));
-                        $return_page .= " ".$this->link($range, $i)." ";
+                        $return_page .= ' ' . $this->link($range, $i) . ' ';
                     }
                 }
             }

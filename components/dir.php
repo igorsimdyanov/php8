@@ -11,7 +11,7 @@ $obj = new ISPager\DirPager(
     2);
 
 // Содержимое текущей страницы
-foreach($obj->getItems() as $img) {
+foreach ($obj->getItems() as $img) {
     echo "<img src='$img' /> ";
 }
 
