@@ -4,7 +4,7 @@
 
 ## Помощь и отзывы
 
-Раздел [Issues](https://github.com/igorsimdyanov/ruby/issues)
+Раздел [Issues](https://github.com/igorsimdyanov/php8/issues)
 
 ## Содержание
 
