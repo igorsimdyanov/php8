@@ -338,4 +338,24 @@
     - Сложные имена полей
 - Резюме
 
+### [Глава 20. Суперглобальные массивы](superblobals)
+
+- Типы суперглобальных массивов
+- Cookie
+- Сессии
+- Переменные окружения
+- Массив `$_SERVER`
+    - Элемент `$_SERVER['DOCUMENT_ROOT']`
+    - Элемент `$_SERVER['HTTP_ACCEPT']`
+    - Элемент `$_SERVER['HTTP_HOST']`
+    - Элемент `$_SERVER['HTTP_REFERER']`
+    - Элемент `$_SERVER['HTTP_USER_AGENT']`
+    - Элемент `$_SERVER['REMOTE_ADDR']`
+    - Элемент `$_SERVER['SERVER_NAME']`
+    - Элемент `$_SERVER['REQUEST_METHOD']`
+    - Элемент `$_SERVER['QUERY_STRING']`
+    - Элемент `$_SERVER['PHP_SELF']`
+    - Элемент `$_SERVER['REQUEST_URI']`
+- Резюме
+
 ...
